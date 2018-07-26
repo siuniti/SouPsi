@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  	<modelVersion>4.0.0</modelVersion>
+  	<parent>
+    	<groupId>com.soupsi</groupId>
+    	<artifactId>soupsi-aggregate</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+  	</parent>
+  	<groupId>com.soupsi.web</groupId>
+  	<artifactId>soupsi-web</artifactId>
+  	<packaging>war</packaging>
+  	<name>SouPsi - Web</name>
+  	<description>Projeto Web</description>
+  
+  	<dependencies>
+		<dependency>
+	  		<groupId>javax.servlet</groupId>
+	  		<artifactId>javax.servlet-api</artifactId>
+	  		<version>3.1.0</version>
+	  		<scope>provided</scope>
+	  	</dependency>
+  	</dependencies>
+  
+  	<build>
+	  	<plugins>
+		  	<plugin>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <version>3.2.2</version>
+			    <configuration>
+			        <warName>SouPsi</warName>
+			    </configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
