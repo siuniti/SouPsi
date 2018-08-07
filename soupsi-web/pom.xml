@@ -4,11 +4,11 @@
 
   	<modelVersion>4.0.0</modelVersion>
   	<parent>
-    	<groupId>com.soupsi</groupId>
+    	<groupId>br.com.soupsi</groupId>
     	<artifactId>soupsi-aggregate</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
   	</parent>
-  	<groupId>com.soupsi.web</groupId>
+  	<groupId>br.com.soupsi.web</groupId>
   	<artifactId>soupsi-web</artifactId>
   	<packaging>war</packaging>
   	<name>SouPsi - Web</name>
@@ -21,6 +21,13 @@
 	  		<version>3.1.0</version>
 	  		<scope>provided</scope>
 	  	</dependency>
+	  	
+	  	<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
   	</dependencies>
   
   	<build>
