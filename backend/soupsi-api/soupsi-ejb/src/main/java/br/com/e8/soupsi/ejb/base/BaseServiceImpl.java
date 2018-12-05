@@ -145,6 +145,10 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 					OperationValue operationValue = (OperationValue)parameter.getValue();
 					
 					switch (operationValue.getOperation()) {
+						case EQUAL_CASE_SENSITIVE: {
+							clause += "UPPER(TRIM(" + parameter.getKey() + "))" + " = UPPER(TRIM(:" + getParameterName(parameter.getKey()) + "))";
+							break;
+						}
 						case LIKE: {
 							clause += "UPPER (" + parameter.getKey() + ") LIKE UPPER(:" + getParameterName(parameter.getKey()) + " )";
 							break;

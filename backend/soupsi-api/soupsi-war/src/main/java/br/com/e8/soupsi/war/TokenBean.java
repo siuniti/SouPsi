@@ -8,8 +8,8 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.servlet.ServletContext;
 
-import br.com.e8.soupsi.client.util.DataUtil;
-import br.com.e8.soupsi.ejb.util.TokenUtil;
+//import br.com.e8.soupsi.client.util.DataUtil;
+//import br.com.e8.soupsi.ejb.util.TokenUtil;
 import br.com.e8.soupsi.jpa.Token;
 
 @Named
@@ -34,26 +34,26 @@ public class TokenBean implements Serializable {
 //		return tokenBlend;
 	}
 	
-	private Token validateTokenBlend(String authorization) {
-		Token tokenAux = activeTokens.get(authorization);
-		
-		if (tokenAux != null) {
-			if (DataUtil.getDataAtual().before(tokenAux.getDtFim())) {
-				tokenAux = updateToken(tokenAux);
-				return tokenAux;
-			} else {
-				activeTokens.remove(tokenAux.getAuthorization());
-			}
-		}
-		
-		return null;
-	}
+//	private Token validateTokenBlend(String authorization) {
+//		Token tokenAux = activeTokens.get(authorization);
+//		
+//		if (tokenAux != null) {
+//			if (DataUtil.getDataAtual().before(tokenAux.getDtFim())) {
+//				tokenAux = updateToken(tokenAux);
+//				return tokenAux;
+//			} else {
+//				activeTokens.remove(tokenAux.getAuthorization());
+//			}
+//		}
+//		
+//		return null;
+//	}
 	
-	private Token updateToken(Token token) {
-		token.setDtFim(DataUtil.addMinutes(DataUtil.getDataAtual(), TokenUtil.AUTH_LIFETIME));
-		
-		activeTokens.put(token.getAuthorization(), token);
-		
-		return token;
-	}
+//	private Token updateToken(Token token) {
+//		token.setDtFim(DataUtil.addMinutes(DataUtil.getDataAtual(), TokenUtil.AUTH_LIFETIME));
+//		
+//		activeTokens.put(token.getAuthorization(), token);
+//		
+//		return token;
+//	}
 }

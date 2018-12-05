@@ -4,6 +4,7 @@ public enum OperationType {
 
 	LIKE(" LIKE "),
 	NOT_EQUAL(" != "),
+	EQUAL_CASE_SENSITIVE(" = "),
 	BETWEEN(" BETWEEN "),
 	GREATER(" > "),
 	GREATER_THAN(" >= "),
